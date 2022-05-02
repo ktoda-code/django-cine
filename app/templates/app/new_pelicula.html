@@ -1,0 +1,17 @@
+﻿{% extends "app/layout.html" %}
+{% block content %}
+
+<h2>{{ title }}</h2>
+<h3>{{ message }}</h3>
+
+<h1>Insertar una pelicula</h1>
+        Formulario para enviar los datos de la pelicula a la vist
+    <form method="post">{% csrf_token %}
+           {% if error  %}
+           <p style="color: red;">Error en algunos de los campos!</p>
+           {% endif %}<br />
+
+           {{ form.as_p }}
+        <input type="submit" value="New Pelicula" />
+    </form>
+{% endblock %}
